@@ -1,6 +1,6 @@
-org: newthingade
-app: serverless
-service: serverless
+org: danielmuthama
+app: serverless-udagram-website
+service: serverless-udagram-website
 
 plugins:
   - serverless-webpack
