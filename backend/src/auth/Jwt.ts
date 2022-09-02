@@ -1,5 +1,5 @@
 import { JwtPayload } from './JwtPayload'
-import { JwtHeader } from 'jsonwebtoken'
+import { JwtHeader } from '../../node_modules/jsonwebtoken'
 
 /**
  * Interface representing a JWT token

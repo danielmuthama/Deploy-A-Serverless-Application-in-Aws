@@ -1,4 +1,4 @@
-import * as winston from 'winston'
+import * as winston from '../../node_modules/winston'
 
 /**
  * Create a logger instance to write log messages in JSON format.

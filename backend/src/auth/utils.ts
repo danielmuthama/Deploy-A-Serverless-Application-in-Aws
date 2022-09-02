@@ -1,4 +1,4 @@
-import { decode } from 'jsonwebtoken'
+import { decode } from '../../node_modules/jsonwebtoken'
 
 import { JwtPayload } from './JwtPayload'
 
