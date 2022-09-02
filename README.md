@@ -1,13 +1,12 @@
-### Serverless TODO (CRUD Application)
-####
-![alt text](https://github.com/danielmuthama/Serverless-Application/blob/main/gb.jpg?raw=true)
+# Serverless TODO
+
 To implement this project, you need to implement a simple TODO application using AWS Lambda and Serverless framework. Search for all comments starting with the `TODO:` in the code to find the placeholders that you need to implement.
 
-### Functionality of the application
+# Functionality of the application
 
 This application will allow creating/removing/updating/fetching TODO items. Each TODO item can optionally have an attachment image. Each user only has access to TODO items that he/she has created.
 
-### TODO items
+# TODO items
 
 The application should store TODO items, and each TODO item contains the following fields:
 
@@ -20,7 +19,7 @@ The application should store TODO items, and each TODO item contains the followi
 
 You might also store an id of a user who created a TODO item.
 
-### Prerequisites
+## Prerequisites
 
 * <a href="https://manage.auth0.com/" target="_blank">Auth0 account</a>
 * <a href="https://github.com" target="_blank">GitHub account</a>
@@ -41,7 +40,7 @@ You might also store an id of a user who created a TODO item.
    sls config credentials --provider aws --key YOUR_ACCESS_KEY_ID --secret YOUR_SECRET_KEY --profile serverless
    ```
    
-### Functions to be implemented
+# Functions to be implemented
 
 To implement this project, you need to implement the following functions and configure them in the `serverless.yml` file:
 
@@ -140,7 +139,7 @@ An id of a user can be extracted from a JWT token passed by a client.
 You also need to add any necessary resources to the `resources` section of the `serverless.yml` file such as DynamoDB table and S3 bucket.
 
 
-### Frontend
+# Frontend
 
 The `client` folder contains a web application that can use the API that should be developed in the project.
 
@@ -157,15 +156,15 @@ export const authConfig = {
 }
 ```
 
-### Authentication
+## Authentication
 
 To implement authentication in your application, you would have to create an Auth0 application and copy "domain" and "client id" to the `config.ts` file in the `client` folder. We recommend using asymmetrically encrypted JWT tokens.
 
-### Best practices
+# Best practices
 
 To complete this exercise, please follow the best practices from the 6th lesson of this course.
 
-### Logging
+## Logging
 
 The starter code comes with a configured [Winston](https://github.com/winstonjs/winston) logger that creates [JSON formatted](https://stackify.com/what-is-structured-logging-and-why-developers-need-it/) log statements. You can use it to write log messages like this:
 
@@ -182,7 +181,7 @@ logger.info('User was authorized', {
 ```
 
 
-### Grading the submission
+# Grading the submission
 
 Once you have finished developing your application, please set `apiId` and Auth0 parameters in the `config.ts` file in the `client` folder. A reviewer would start the React development server to run the frontend that should be configured to interact with your serverless application.
 
@@ -190,7 +189,7 @@ Once you have finished developing your application, please set `apiId` and Auth0
 
 *Please leave your application running until a submission is reviewed. If implemented correctly it will cost almost nothing when your application is idle.*
 
-### Suggestions
+# Suggestions
 
 To store TODO items, you might want to use a DynamoDB table with local secondary index(es). A create a local secondary index you need to create a DynamoDB resource like this:
 
@@ -290,4 +289,3 @@ Right click on the imported collection to set variables for the collection:
 Provide variables for the collection (similarly to how this was done in the course):
 
 ![Alt text](images/import-collection-5.png?raw=true "Image 5")
-"# Serverless-Application" 
