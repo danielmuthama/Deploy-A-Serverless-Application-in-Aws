@@ -1,12 +1,12 @@
 import { CustomAuthorizerEvent, CustomAuthorizerResult } from 'aws-lambda'
 import 'source-map-support/register'
-import { verify} from 'jsonwebtoken'
+import { verify} from '../../../node_modules/jsonwebtoken'
 import { createLogger } from '../../utils/logger'
 import Axios from 'axios'
 import { JwtPayload } from '../../auth/JwtPayload'
 
 const logger = createLogger('auth');
-const jwksUrl = 'https://dev-fjp-3wf9.us.auth0.com/.well-known/jwks.json';
+const jwksUrl = 'https://dev-90kgrs2z.us.auth0.com/.well-known/jwks.json';
 
 
 export const handler = async (
