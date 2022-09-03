@@ -1,9 +1,6 @@
 org: danielmuthama
 app: serverless
 service: serverless
-disabledDeprecations:
-  - CODE_1 # To disable specific deprecation with code "CODE_1"
-  - '*' # To disable all deprecation messages
 
 plugins:
   - serverless-webpack
@@ -23,9 +20,9 @@ provider:
     apiGateway: true
 
   environment:
-    PROJECT_NAME: udagram
-    TODOS_TABLE: udagram-${self:provider.stage}
-    S3_BUCKET_NAME: udagram-${self:provider.stage}
+    PROJECT_NAME: todo-serverless
+    TODOS_TABLE: todo-serverless-${self:provider.stage}
+    S3_BUCKET_NAME: todo-serverless-${self:provider.stage}
 
 custom:
   documentation:

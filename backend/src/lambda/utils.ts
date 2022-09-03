@@ -1,4 +1,4 @@
-import { APIGatewayProxyEvent } from "../../node_modules/aws-lambda";
+import { APIGatewayProxyEvent } from "aws-lambda";
 import { parseUserId } from "../auth/utils";
 
 /**

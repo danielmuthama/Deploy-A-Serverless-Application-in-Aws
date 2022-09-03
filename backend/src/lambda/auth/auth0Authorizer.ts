@@ -1,8 +1,8 @@
-import { CustomAuthorizerEvent, CustomAuthorizerResult } from '../../../node_modules/aws-lambda'
+import { CustomAuthorizerEvent, CustomAuthorizerResult } from 'aws-lambda'
 import 'source-map-support/register'
-import { verify } from '../../../node_modules/jsonwebtoken';
+import { verify} from 'jsonwebtoken'
 import { createLogger } from '../../utils/logger'
-import Axios from 'axios';
+import Axios from 'axios'
 import { JwtPayload } from '../../auth/JwtPayload'
 
 const logger = createLogger('auth');
@@ -81,3 +81,4 @@ function getToken(authHeader: string): string {
 
   return token
 }
+
