@@ -20,9 +20,9 @@ provider:
     apiGateway: true
 
   environment:
-    PROJECT_NAME: todo-serverless
-    TODOS_TABLE: todo-serverless-${self:provider.stage}
-    S3_BUCKET_NAME: todo-serverless-${self:provider.stage}
+    PROJECT_NAME: serverless
+    TODOS_TABLE: serverless-${self:provider.stage}
+    S3_BUCKET_NAME: serverless-${self:provider.stage}
 
 custom:
   documentation:
