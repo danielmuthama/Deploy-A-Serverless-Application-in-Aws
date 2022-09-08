@@ -6,7 +6,7 @@ import Axios from 'axios'
 import { JwtPayload } from '../../auth/JwtPayload'
 
 const logger = createLogger('auth');
-const jwksUrl = 'https://dev-90kgrs2z.us.auth0.com/.well-known/jwks.json';
+const jwksUrl = 'https://dev-oun5g9dp.us.auth0.com/.well-known/jwks.json';
 
 
 export const handler = async (

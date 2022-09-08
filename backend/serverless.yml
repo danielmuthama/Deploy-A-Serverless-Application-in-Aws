@@ -1,6 +1,6 @@
 org: danielmuthama
-app: serverless
-service: serverless
+app: serverless-todoapp
+service: serverless-todoapp
 
 plugins:
   - serverless-webpack
@@ -20,9 +20,9 @@ provider:
     apiGateway: true
 
   environment:
-    PROJECT_NAME: serverless
-    TODOS_TABLE: serverless-${self:provider.stage}
-    S3_BUCKET_NAME: serverless-${self:provider.stage}
+    PROJECT_NAME: serverless-todoapp
+    TODOS_TABLE: serverless-todoapp-${self:provider.stage}
+    S3_BUCKET_NAME: serverless-todoapp-${self:provider.stage}
 
 custom:
   documentation:
