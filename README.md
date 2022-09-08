@@ -148,7 +148,7 @@ This frontend should work with your serverless application once it is developed,
 
 ```ts
 const apiId = '...' API Gateway id
-export const apiEndpoint = `https://${apiId}.execute-api.us-east-1.amazonaws.com/dev`
+export const apiEndpoint = `https://${apiId}.execute-api.us-east-2.amazonaws.com/dev`
 
 export const authConfig = {
   domain: '...',    // Domain from Auth0
