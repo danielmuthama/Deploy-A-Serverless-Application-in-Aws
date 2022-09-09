@@ -1,6 +1,6 @@
 
-### Building and Deploying Serverless TODO (CRUD Application)
-
+## Building and Deploying Serverless TODO (CRUD Application)
+Inspired by: https://www.youtube.com/watch?v=zan7-x0Plnk&t=379s
 ### Project Overview
  ![alt text](https://miro.medium.com/max/1012/1*c4lIbMQLDydxSzc_Q68t7w.png)
 
