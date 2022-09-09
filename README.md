@@ -1,10 +1,29 @@
 
 ### Building and Deploying Serverless TODO (CRUD Application)
 
-#### Project Overview
+### Project Overview
  ![alt text](https://miro.medium.com/max/1012/1*c4lIbMQLDydxSzc_Q68t7w.png)
- 
+
 To implement this project, you need to implement a simple TODO application using AWS Lambda and Serverless framework. Search for all comments starting with the `TODO:` in the code to find the placeholders that you need to implement.
+
+### Deployed Images
+
+####  
+ ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/Auth0_Login.png?raw=true)
+
+ ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/Auth0_Details.png?raw=true)
+
+ ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/CloudFormation.png?raw=true)
+
+ ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/S3%20Bucket.png?raw=true)
+
+  ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/serverless.png?raw=true)
+
+  ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/serverless%20deployed(2).png?raw=true)
+
+  ![alt text](https://github.com/danielmuthama/Deploy-A-Serverless-Application-in-Aws/blob/main/Deployed_Images/Todos-App.png?raw=true)
+
+
 
 ### Functionality of the application
 
