@@ -1,7 +1,9 @@
-<<<<<<< HEAD
-### Serverless TODO (CRUD Application)
-####
-![alt text](https://github.com/danielmuthama/Serverless-Application/blob/main/gb.jpg?raw=true)
+
+### Building and Deploying Serverless TODO (CRUD Application)
+
+#### Project Overview
+ ![alt text](https://miro.medium.com/max/1012/1*c4lIbMQLDydxSzc_Q68t7w.png)
+ 
 To implement this project, you need to implement a simple TODO application using AWS Lambda and Serverless framework. Search for all comments starting with the `TODO:` in the code to find the placeholders that you need to implement.
 
 ### Functionality of the application
