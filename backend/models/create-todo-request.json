@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "group",
+  "title": "CreateToDoRequest",
   "type": "object",
   "properties": {
     "name": {
@@ -10,9 +10,6 @@
       "type": "string"
     }
   },
-  "required": [
-    "name",
-    "dueDate"
-  ],
+  "required": ["name", "dueDate"],
   "additionalProperties": false
 }

@@ -1,26 +1,48 @@
-import 'source-map-support/register'
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import * as middy from "middy";
+import { cors, httpErrorHandler } from "middy/middlewares";
+import { CreateTodoRequest } from "../../requests/CreateTodoRequest";
+import { createTodo } from "../../businessLogic/todo";
+import { decodeJWTFromAPIGatewayEvent } from "../../auth/utils";
+import * as uuid from "uuid";
+import { parseUserId } from "../../auth/utils";
+import { createLogger } from "../../utils/logger";
+const logger = createLogger("todo");
 
-import {APIGatewayProxyEvent, APIGatewayProxyHandler, APIGatewayProxyResult} from 'aws-lambda'
-import {CreateTodoRequest} from '../../requests/CreateTodoRequest';
-import {createToDo} from "../../Logic/ToDo";
+export const handler = middy(
+  async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+    console.log("Processing event: ", event);
 
-export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     // TODO: Implement creating a new TODO item
-    console.log("Processing Event ", event);
-    const authorization = event.headers.Authorization;
-    const split = authorization.split(' ');
-    const jwtToken = split[1];
+    const todoRequest: CreateTodoRequest = JSON.parse(event.body);
 
-    const newTodo: CreateTodoRequest = JSON.parse(event.body);
-    const toDoItem = await createToDo(newTodo, jwtToken);
+    const todoId = uuid.v4();
+    const jwtToken = decodeJWTFromAPIGatewayEvent(event);
+
+    const userId = parseUserId(jwtToken);
+
+    const newTodo = await createTodo(todoId, todoRequest, userId);
+
+    logger.info("todo CREATED", {
+      // Additional information stored with a log statement
+      key: todoId,
+      userId: userId,
+      date: new Date().toISOString,
+    });
 
     return {
-        statusCode: 201,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-            "item": toDoItem
-        }),
-    }
-};
+      statusCode: 201,
+      body: JSON.stringify({
+        item: newTodo,
+      }),
+    };
+  }
+);
+
+handler
+  .use(
+    cors({
+      credentials: true,
+    })
+  )
+  .use(httpErrorHandler());

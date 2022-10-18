@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "title": "group",
+  "title": "UpdateToDoRequest",
   "type": "object",
   "properties": {
     "name": {
@@ -13,10 +13,6 @@
       "type": "boolean"
     }
   },
-  "required": [
-    "name",
-    "dueDate",
-    "done"
-  ],
+  "required": ["name", "dueDate", "done"],
   "additionalProperties": false
 }

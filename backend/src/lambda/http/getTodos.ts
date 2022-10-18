@@ -1,24 +1,39 @@
-import 'source-map-support/register'
+import "source-map-support/register";
 
-import {APIGatewayProxyEvent, APIGatewayProxyResult, APIGatewayProxyHandler} from 'aws-lambda';
-import {getAllToDo} from "../../Logic/ToDo";
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import * as middy from "middy";
+import { cors, httpErrorHandler } from "middy/middlewares";
+import { getAllTodosForUser } from "../../businessLogic/todo";
+import { decodeJWTFromAPIGatewayEvent } from "../../auth/utils";
+import { parseUserId } from "../../auth/utils";
 
-export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+export const handler = middy(
+  async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+    console.log("Processing event: ", event);
     // TODO: Get all TODO items for a current user
-    console.log("Processing Event ", event);
-    const authorization = event.headers.Authorization;
-    const split = authorization.split(' ');
-    const jwtToken = split[1];
+    const jwtToken = decodeJWTFromAPIGatewayEvent(event);
+    const userId = parseUserId(jwtToken);
+    const result = await getAllTodosForUser(userId);
 
-    const toDos = await getAllToDo(jwtToken);
+    if (result.count !== 0)
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ items: result.Items }),
+      };
 
     return {
-        statusCode: 200,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify({
-            "items": toDos,
-        }),
-    }
-};
+      statusCode: 404,
+      body: JSON.stringify({
+        error: "Item not found",
+      }),
+    };
+  }
+);
+
+handler
+  .use(
+    cors({
+      credentials: true,
+    })
+  )
+  .use(httpErrorHandler());
