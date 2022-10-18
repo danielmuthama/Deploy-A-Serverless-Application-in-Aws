@@ -1,7 +1,12 @@
 org: danielmuthama
+<<<<<<< HEAD
 app: serverless-todo-appl
 service: serverless-todo-appl
 
+=======
+app: serverless-todoapp
+service: serverless-todoapp
+>>>>>>> d5d5b61cfc70cf0e3f547dedc69917b9a4d3bbc2
 
 plugins:
   - serverless-webpack
@@ -21,9 +26,15 @@ provider:
     apiGateway: true
 
   environment:
+<<<<<<< HEAD
     PROJECT_NAME: udacity
     TODOS_TABLE: udacity-serverless-application-todo-${self:provider.stage}
     S3_BUCKET_NAME: udacity-serverless-application-todo-${self:provider.stage}
+=======
+    PROJECT_NAME: serverless-todoapp
+    TODOS_TABLE: serverless-todoapp-${self:provider.stage}
+    S3_BUCKET_NAME: serverless-todoapp-${self:provider.stage}
+>>>>>>> d5d5b61cfc70cf0e3f547dedc69917b9a4d3bbc2
 
 custom:
   documentation:

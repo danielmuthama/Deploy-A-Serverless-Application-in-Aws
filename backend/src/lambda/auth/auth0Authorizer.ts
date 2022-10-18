@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { CustomAuthorizerEvent, CustomAuthorizerResult } from "aws-lambda";
 import "source-map-support/register";
 import { verify, decode } from "jsonwebtoken";
@@ -6,6 +7,17 @@ import Axios from "axios";
 import { JwtPayload } from "../../auth/JwtPayload";
 import { Jwt } from "../../auth/Jwt";
 const logger = createLogger("auth");
+=======
+import { CustomAuthorizerEvent, CustomAuthorizerResult } from 'aws-lambda'
+import 'source-map-support/register'
+import { verify} from '../../../node_modules/jsonwebtoken'
+import { createLogger } from '../../utils/logger'
+import Axios from 'axios'
+import { JwtPayload } from '../../auth/JwtPayload'
+
+const logger = createLogger('auth');
+const jwksUrl = 'https://dev-oun5g9dp.us.auth0.com/.well-known/jwks.json';
+>>>>>>> d5d5b61cfc70cf0e3f547dedc69917b9a4d3bbc2
 
 const jwksUrl = "https://dev-90kgrs2z.us.auth0.com/.well-known/jwks.json";
 
