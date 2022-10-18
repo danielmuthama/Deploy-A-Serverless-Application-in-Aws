@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+<<<<<<< HEAD:backend/models/update-todo-model.json
+  "title": "todo",
+=======
+  "title": "UpdateToDoRequest",
+>>>>>>> 2a212deb9a209deb002256147968ff27b1a5d065:backend/models/update-todo-request.json
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "dueDate": {
+      "type": "string"
+    },
+    "done": {
+      "type": "boolean"
+    }
+  },
+  "required": ["name", "dueDate", "done"],
+  "additionalProperties": false
+}

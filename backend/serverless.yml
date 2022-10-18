@@ -1,7 +1,18 @@
 # TODO: Change the name of the org
 org: danielmuthama
+<<<<<<< HEAD
 app: serverless-todo-app
 service: serverless-todo-app
+=======
+<<<<<<< HEAD
+app: serverless-todo-appl
+service: serverless-todo-appl
+
+=======
+app: serverless-todoapp
+service: serverless-todoapp
+>>>>>>> d5d5b61cfc70cf0e3f547dedc69917b9a4d3bbc2
+>>>>>>> 2a212deb9a209deb002256147968ff27b1a5d065
 
 plugins:
   - serverless-webpack
@@ -24,6 +35,7 @@ provider:
   # Use these variables in the functions and resouorces section below. For example,
   # ${self:provider.environment.ATTACHMENT_S3_BUCKET}
   environment:
+<<<<<<< HEAD
     TODOS_TABLE: Todos-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
     ATTACHMENT_S3_BUCKET: serverless-todo-appgi-${self:provider.stage}
@@ -51,6 +63,17 @@ provider:
             - xray:GetGroups
             - xray:GetGroup
           Resource: "*"
+=======
+<<<<<<< HEAD
+    PROJECT_NAME: udacity
+    TODOS_TABLE: udacity-serverless-application-todo-${self:provider.stage}
+    S3_BUCKET_NAME: udacity-serverless-application-todo-${self:provider.stage}
+=======
+    PROJECT_NAME: serverless-todoapp
+    TODOS_TABLE: serverless-todoapp-${self:provider.stage}
+    S3_BUCKET_NAME: serverless-todoapp-${self:provider.stage}
+>>>>>>> d5d5b61cfc70cf0e3f547dedc69917b9a4d3bbc2
+>>>>>>> 2a212deb9a209deb002256147968ff27b1a5d065
 
 custom:
   topicName: todoTopic-${self:provider.stage}
@@ -272,6 +295,7 @@ resources:
           Statement:
             - Sid: PublicReadForGetBucketObjects
               Effect: Allow
+<<<<<<< HEAD
               Principal: "*"
               Action: "s3:GetObject"
               Resource: "arn:aws:s3:::${self:provider.environment.ATTACHMENT_S3_BUCKET}/*"
@@ -281,3 +305,9 @@ resources:
               Action: "s3:PutObject"
               Resource: "arn:aws:s3:::${self:provider.environment.ATTACHMENT_S3_BUCKET}/*"
         Bucket: !Ref AttachmentsBucket
+=======
+              Principal: '*'
+              Action: 's3:GetObject'
+              Resource: 'arn:aws:s3:::${self:provider.environment.S3_BUCKET_NAME}/*'
+        Bucket: !Ref AttachmentsBucket
+>>>>>>> 2a212deb9a209deb002256147968ff27b1a5d065

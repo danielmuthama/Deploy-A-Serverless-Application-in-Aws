@@ -1,6 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
+<<<<<<< HEAD:backend/models/create-todo-model.json
   "title": "todo",
+=======
+  "title": "CreateToDoRequest",
+>>>>>>> 2a212deb9a209deb002256147968ff27b1a5d065:backend/models/create-todo-request.json
   "type": "object",
   "properties": {
     "name": {
@@ -8,15 +12,8 @@
     },
     "dueDate": {
       "type": "string"
-    },
-    "done": {
-      "type": "boolean"
     }
   },
-  "required": [
-    "name",
-    "dueDate",
-    "done"
-  ],
+  "required": ["name", "dueDate"],
   "additionalProperties": false
 }
